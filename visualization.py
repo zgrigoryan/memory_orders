@@ -3,18 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def main():
-    # Read the CSV file produced by the C++ tests.
     df = pd.read_csv("results.csv")
-    
-    # Remove potential non-numeric "Average" trial row.
-    df = df[df['Trial'] != "Average"]
+        df = df[df['Trial'] != "Average"]
 
-    # Convert the timing columns to numeric types.
     df['SeqCst(ns)'] = pd.to_numeric(df['SeqCst(ns)'])
     df['Relaxed(ns)'] = pd.to_numeric(df['Relaxed(ns)'])
     df['AcqRel(ns)'] = pd.to_numeric(df['AcqRel(ns)'])
 
-    # Calculate average execution times.
     avg_seq = df['SeqCst(ns)'].mean()
     avg_relaxed = df['Relaxed(ns)'].mean()
     avg_acq_rel = df['AcqRel(ns)'].mean()
