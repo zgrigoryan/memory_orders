@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -O2 -I./include
 
-SRC = main.cpp counter_seq_cst.cpp 
+SRC = main.cpp counter_seq_cst.cpp counter_relaxed.cpp counter_acq_rel.cpp
 OBJ = $(SRC:.cpp=.o)
 
 TARGET = counter_test

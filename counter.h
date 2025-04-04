@@ -11,6 +11,11 @@ namespace counter_tests {
     // Returns the final counter value.
     int test_seq_cst(int iterations, int num_threads);
 
+    // Test function for the counter using relaxed memory order.
+    int test_relaxed(int iterations, int num_threads);
+
+    // Test function for the counter using acquire-release semantics.
+    int test_acq_rel(int iterations, int num_threads);
 
     // A helper that runs a test function for a given number of trials and
     // returns a vector with the elapsed time (in nanoseconds) for each trial.
