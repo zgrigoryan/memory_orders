@@ -17,6 +17,7 @@ Additionally, the project leverages the [Kaizen library](https://github.com/hein
 - [Requirements](#requirements)
 - [Building the Project](#building-the-project)
 - [Running the Tests](#running-the-tests)
+- [Output example](#output-example)
 - [Visualization](#visualization)
 - [Sample Results](#sample-results)
 - [Memory Orders in C++](#memory-orders-in-c)
