@@ -66,7 +66,7 @@ jobs:
         run: |
           # Determine the executable name based on OS.
           if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
-            exe_name=counter_test.exe
+            exe_name=./counter_test.exe
           else
             exe_name=./counter_test
           fi
