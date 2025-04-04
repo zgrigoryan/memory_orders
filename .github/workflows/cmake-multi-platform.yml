@@ -65,13 +65,13 @@ jobs:
         shell: bash
         run: |
           # Determine the executable name based on OS.
-          if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
-            exe_name=.\\counter_test.exe
+          if [ "${RUNNER_OS}" == "Windows" ]; then
+            exe_name=./Release/counter_test.exe
           else
             exe_name=./counter_test
           fi
-          echo "Running output format test using $exe_name"
-          $exe_name --iterations 1000000 --trials 1 --threads 8 --verbose > output.txt
+          echo "Running output format test using ${exe_name}"
+          ${exe_name} --iterations 1000000 --trials 1 --threads 8 --verbose > output.txt
           echo "Output:"
           cat output.txt
           echo "Checking output format..."
